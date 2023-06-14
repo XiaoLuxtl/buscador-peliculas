@@ -1,13 +1,12 @@
 import "./App.css";
-import results from "./mocks/results.json";
-import noResults from "./mocks/no-reuslts.json";
+import { useMovies } from "./hooks/useMovies";
 import { Movies } from "./components/Movies";
 
 // console.log()
 // https://www.omdbapi.com/?s=Avengers&apikey=${import.meta.env.VITE_OMDBAPI_KEY}
 
 function App() {
-  const movies = results.Search;
+  const { movies: mappedMovies } = useMovies();
 
   return (
     <div className="page">
@@ -20,7 +19,7 @@ function App() {
       </header>
 
       <main>
-        <Movies movies={movies} />
+        <Movies movies={mappedMovies} />
       </main>
     </div>
   );
