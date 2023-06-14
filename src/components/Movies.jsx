@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 export function ListOfMovies({ movies }) {
+  console.log(movies);
   return (
     // Esto es mala practica ya que
     // se depende del nombre de la API
@@ -7,10 +8,10 @@ export function ListOfMovies({ movies }) {
 
     <ul>
       {movies.map((movie) => (
-        <li key={movie.imdbID}>
-          <h3>{movie.Title}</h3>
-          <p>{movie.Year}</p>
-          <img src={movie.Poster} alt={movie.Title} />
+        <li key={movie.id}>
+          <h3>{movie.title}</h3>
+          <p>{movie.year}</p>
+          <img src={movie.poster} alt={movie.title} />
         </li>
       ))}
     </ul>
