@@ -1,6 +1,10 @@
 /* eslint-disable react/prop-types */
 export function ListOfMovies({ movies }) {
   return (
+    // Esto es mala practica ya que
+    // se depende del nombre de la API
+    // movie.Year
+
     <ul>
       {movies.map((movie) => (
         <li key={movie.imdbID}>
