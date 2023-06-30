@@ -7,8 +7,9 @@ Consigue la API Key en la propia página web registrando tu email.
 
 - [X] Necesita mostrar un input para buscar la película y un botón para buscar.
 - [X] Lista las películas y muestra el título, año y poster.
-- [ ] Que el formulario funcione.
-- [ ] Haz que las películas se muestren en un grid responsive.
+- [X] Que el formulario funcione.
+- [ ] Hacer fetching de datos a la API
+- [X] Haz que las películas se muestren en un grid responsive.
 - [ ] Hacer el fetching de datos a la API.
 
 ### Primera iteración:
