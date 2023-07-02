@@ -5,7 +5,7 @@ import "./App.css";
 
 function App() {
   const { query, updateQuery, error } = useQuery()
-  const { movies, getMovies } = useMovies({ query });
+  const { movies, loading, getMovies } = useMovies({ query });
 
 
   const handleSubmit = (event) => {
@@ -35,7 +35,8 @@ function App() {
       </header>
 
       <main>
-        <Movies movies={movies} />
+        { loading ? <p>Cargando ...</p> : <Movies movies={movies} /> }
+        
       </main>
     </div>
   );
