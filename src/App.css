@@ -61,6 +61,8 @@ form {
 .movie img {
   border-radius: 8px;
   object-fit: cover;
+  background-color: lightslategrey;
+  min-width: 100%;
 
   min-height: 480px;
   max-height: 480px;
