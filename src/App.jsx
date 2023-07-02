@@ -25,7 +25,7 @@ function App() {
 
   return (
     <div className="page">
-      <h1>Hola mundo</h1>
+      <h1>Buscador de películas</h1>
       <header>
         <form action="" className="form" onSubmit={handleSubmit}>
           <input onChange={handleChange} value={query} name="query" placeholder="Avengers, Forrest Gump..." type="text" />
