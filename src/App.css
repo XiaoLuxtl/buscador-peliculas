@@ -27,12 +27,30 @@ form {
 
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 6px;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 26px;
+
+  padding-bottom: 3rem;
 }
 
 .movie {
+  border-bottom: 3px solid transparent;
+  transition: border-bottom 0.3s ease;
   text-align: center;
+  padding-bottom: 0.5rem;
+}
+.movie:hover {
+  border-bottom: 3px solid gray;
+}
+
+.movie h3 {
+  font-size: 1.2rem;
+  height: 3rem;
+  vertical-align: middle;
+
+  display: flex;
+  justify-content: center;
+  align-items: end;
 }
 
 .movie h3,
@@ -42,4 +60,8 @@ form {
 
 .movie img {
   border-radius: 8px;
+  object-fit: cover;
+
+  min-height: 480px;
+  max-height: 480px;
 }
