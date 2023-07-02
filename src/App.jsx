@@ -3,19 +3,16 @@ import { useQuery } from "./hooks/useQuery";
 import { Movies } from "./components/Movies";
 import "./App.css";
 
-// https://www.omdbapi.com/?s=Avengers&apikey=${import.meta.env.VITE_OMDBAPI_KEY}
-
-function App() {  
-  const { movies } = useMovies();
+function App() {
   const { query, updateQuery, error } = useQuery()
+  const { movies, getMovies } = useMovies({ query });
 
 
   const handleSubmit = (event) => {
     // Forma controladada (dependemos de React)
     // cada que se actualzia el input llama a render
     event.preventDefault()
-    console.log({query})
-    
+    getMovies()
   }
 
   const handleChange = (event) => {
