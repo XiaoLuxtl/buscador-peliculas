@@ -14,12 +14,12 @@ export function useMovies({ query }) {
       setError(null);
       const newMovies = await searchMovies({ query });
       setMovies(newMovies);
-    } catch (error) {
-      setError(error.message);
+    } catch (e) {
+      setError(e.message);
     } finally {
       setLoading(false);
     }
   };
 
-  return { movies, loading, getMovies };
+  return { movies, loading, error, getMovies };
 }
