@@ -1,17 +1,26 @@
+import { useCallback, useState } from "react";
 import { useMovies } from "./hooks/useMovies";
 import { useQuery } from "./hooks/useQuery";
 import { Movies } from "./components/Movies";
+import debounce from "just-debounce-it"
 import "./App.css";
-import { useState } from "react";
 
 function App() {
   const [sort, setSort] = useState(false);
   const { query, updateQuery, error } = useQuery();
   const { movies, loading, getMovies } = useMovies({ query, sort });
 
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const debouncedGetMovies = useCallback(
+      debounce(query => {  
+        console.log(query)  
+      getMovies({ query });
+    }, 350)
+    , []
+  )
+
   const handleSubmit = (event) => {
-    // Forma controladada (dependemos de React)
-    // cada que se actualzia el input llama a render
     event.preventDefault();
     getMovies({ query });
   };
@@ -23,7 +32,8 @@ function App() {
   const handleChange = (event) => {
     const newQuery = event.target.value;
     if (newQuery.startsWith(" ")) return;
-    updateQuery(newQuery);
+    updateQuery(newQuery)
+    debouncedGetMovies(newQuery);
   };
 
   return (
