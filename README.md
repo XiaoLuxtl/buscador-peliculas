@@ -44,7 +44,7 @@ Consigue la API Key en la propia página web registrando tu email.
 - [X] Haz que las películas se muestren en un grid responsive.
 
 ### Primera iteración:
-- [ ] Evitar que se haga la misma búsqueda dos veces seguidas.
+- [X] Evitar que se haga la misma búsqueda dos veces seguidas.
 - [ ] Haz que la búsqueda se haga automáticamente al escribir.
 - [ ] Evita que se haga la búsqueda continuamente al escribir (debounce).
 
